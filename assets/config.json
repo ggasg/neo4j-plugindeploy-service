@@ -1,4 +1,5 @@
 {
+    "appName": "",
     "projectName": "neo4j-ps-202001",
     "dbServerName": "gg-neo-single",
     "computeZone": "us-east1-b",

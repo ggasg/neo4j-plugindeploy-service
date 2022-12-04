@@ -6,8 +6,8 @@ if [[ -z "$SERVICE_ACCOUNT" ]]; then
     return 1
 fi
 
-NAME="neo4j-gg-plugin-app"
-PROJECT=$(gcloud config get-value project)
+#NAME="neo4j-gg-plugin-app"
+#PROJECT=$(gcloud config get-value project)
 IMAGE="gcr.io/$PROJECT/$NAME"
 
 # Need YAML so we can set --build-arg
@@ -23,4 +23,4 @@ gcloud builds submit --config ./cloudbuild.yml
 
 rm ./cloudbuild.yml
 
-gcloud run deploy $NAME --image $IMAGE --region=us-east1
+gcloud run deploy $NAME --image $IMAGE --region=$REGION

@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node src/index.js",
-    "startAppLocal": "nodemon src"
+    "startAppLocal": "nodemon src",
+    "deployToCloudRun": "node assets/deployExecutor.js"
   },
   "keywords": [],
   "author": "",
