@@ -66,12 +66,12 @@ curl --location --request POST 'http://localhost:3000' \
 ## Deploying and Testing on GCP
 For a successful end to end execution of the pipeline, this Web Application can be deployed to Cloud Run or Kubernetes Engine. But for simplicity (and also lower costs), all steps are performed with Cloud Run.
 
-Because the Dockerfile depends on some environment variables to properly configure the gcp CLI, the process of deploying to Cloud Run is more involved. But this logic is encapsulated in a shell script for you (taken almost directly from [this source](https://til.simonwillison.net/cloudrun/using-build-args-with-cloud-run)) so all you need to do is set the Service Account as environment variable in your shell (no ned to EXPORT it) and run it:
+Because the Dockerfile depends on some environment variables to properly configure the gcp CLI, the process of deploying to Cloud Run is more involved. But this logic is encapsulated in a shell script for you (taken almost directly from [this post](https://til.simonwillison.net/cloudrun/using-build-args-with-cloud-run)) so all you need to do is run the node module that prepares and runs the script:
 
 ```bash
-SERVICE_ACCOUNT=<SERVICE_ACCOUNT_EMAIL>
-source ./assets/deploy.sh
+npm run deployToCloudRun
 ```
+This will ask you if you'd like to update the environment variables used in the build process. If you're deploying for the first time, you must answer __Y__ and every time you do so, the entire process may take a few more minutes compared to answering __N__
 You should be able monitor the build process in the Cloud Build logs within the GCP Console or via CLI.
 
 To test this Service on GCP you can either send a direct request to it (you'll need to authenticate) or trigger the deployment pipeline by moving a file to the Storage Bucket:
