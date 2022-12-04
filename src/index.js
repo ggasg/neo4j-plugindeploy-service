@@ -6,9 +6,6 @@ const { spawnSync, spawn } = require('child_process');
 const fs = require('fs');
 const appConfig = JSON.parse(fs.readFileSync('assets/config.json', 'utf-8'));
 
-// const serverName = 'gg-neo-single';
-// const computeZone = 'us-east1-b'
-// const destPluginFolder = '/var/lib/neo4j/plugins';
 const destLocal = process.cwd();
 
 app.use(express.json());

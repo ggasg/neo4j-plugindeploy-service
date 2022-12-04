@@ -1,8 +1,8 @@
 {
     "appName": "",
-    "projectName": "neo4j-ps-202001",
-    "dbServerName": "gg-neo-single",
-    "computeZone": "us-east1-b",
+    "projectName": "",
+    "dbServerName": "",
+    "computeZone": "",
     "destPluginFolder": "/var/lib/neo4j/plugins",
-    "serviceAccountName": "gg-compute-neo@neo4j-ps-202001.iam.gserviceaccount.com"
+    "serviceAccountName": ""
 }

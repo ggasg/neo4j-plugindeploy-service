@@ -106,3 +106,5 @@ dist
 assets/keys.json
 .DS_Store
 assets/key.json
+assets/cloudbuild.yml
+assets/config.json.prod
